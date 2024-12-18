@@ -15,7 +15,7 @@ pipeline {
   stages {
     stage('Fetch code'){
       steps {
-        git branch: 'docker', url: 'https://github.com/baruadb/new-project.git'
+        git branch: 'docker', url: 'git@github.com:baruadb/new-project.git'
       }
     }
 
