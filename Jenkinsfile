@@ -9,13 +9,11 @@ pipeline {
         registryCredential = 'ecr:us-east-2:awscreds'
         appRegistry = "281908687347.dkr.ecr.us-east-2.amazonaws.com/vprofileappimg"
         vprofileRegistry = "https://281908687347.dkr.ecr.us-east-2.amazonaws.com"
-        cluster = "vvprofile"
-        service = "vprofileappsvc"
     }
   stages {
     stage('Fetch code'){
       steps {
-        git branch: 'docker', url: 'git@github.com:baruadb/new-project.git'
+        git branch: 'docker', url: 'https://github.com/baruadb/new-project.git'
       }
     }
 
@@ -47,5 +45,6 @@ pipeline {
             }
           }
      }
-     
-     
+
+  }
+}
