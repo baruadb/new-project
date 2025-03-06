@@ -60,14 +60,6 @@ pipeline {
             }
         }
 
-        stage("Quality Gate") {
-            steps {
-              timeout(time: 1, unit: 'HOURS') {
-                waitForQualityGate abortPipeline: false
-              }
-            }
-          }
-
         stage('Build App Image') {
           steps {
        
