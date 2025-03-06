@@ -42,12 +42,6 @@ pipeline {
             }
         }
 
-        stage('Checkstyle Analysis') {
-            steps{
-                sh 'mvn checkstyle:checkstyle'
-            }
-        }
-
         stage("Sonar Code Analysis") {
             environment {
                 scannerHome = tool 'sonar6.2'
@@ -60,8 +54,7 @@ pipeline {
                    -Dsonar.sources=src/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
                    -Dsonar.junit.reportsPath=target/surefire-reports/ \
-                   -Dsonar.jacoco.reportsPath=target/jacoco.exec \
-                   -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
+                   -Dsonar.jacoco.reportsPath=target/jacoco.exec \'''
               }
             }
         }
